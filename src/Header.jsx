@@ -2,7 +2,7 @@
 function Header() {
   return (
     <header>
-      <h1>vClock</h1>
+      <h1>Ramen Timer</h1>
       <div className="header-right">
         <span>Holidays</span>
         <span>Tools ▼</span>

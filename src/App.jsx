@@ -9,7 +9,10 @@ function App() {
 
   return (
     <div className="App">
+      <div>
       <Header />
+      </div>
+      
       <div className="content">
         <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
         <main>
