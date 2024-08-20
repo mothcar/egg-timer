@@ -1,7 +1,6 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -80,34 +79,15 @@ nav button.active {
 
 
 .timer-display {
-  font-size: 72px;
+  font-size: 6rem;
   color: orange;
-}
-
-.controls {
-  margin-top: 20px;
-}
-
-.controls button {
-  margin: 0 10px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 .edit { background-color: #2196F3; }
 .reset { background-color: #FFC107; }
 .start { background-color: #4CAF50; }
 
-.App {
-  text-align: center;
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  color: white;
-}
+
 
 /* header {
   display: flex;
@@ -160,12 +140,11 @@ main {
   font-size: 3em;
  }
 
-.timer-display {
-  font-size: 72px;
-  color: orange;
-}
+
 
 .controls {
+  display: flex;
+  flex-direction: column;
   margin-top: 20px;
 }
 
@@ -200,10 +179,6 @@ main {
     margin: 0 5px;
   }
 
-  .timer-display {
-    font-size: 48px;
-  }
-
   .controls button {
     padding: 8px 16px;
     margin: 0 5px;
@@ -211,20 +186,12 @@ main {
 }
 
 @media (max-width: 480px) {
-  /* header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .header-right {
-    margin-top: 10px;
-  } */
   .title {
-    font-size: 2em;
+    font-size: 2rem;
    }
 
   .timer-display {
-    font-size: 36px;
+    font-size: 4rem;
   }
 
   .controls {

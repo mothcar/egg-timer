@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 function Timer() {
   const [time, setTime] = useState(0); // 58:58 in seconds
+  const [men, setMen] = useState("Select"); // 58:58 in seconds
   const [isActive, setIsActive] = useState(false);
   const [isShow, setShow] = useState(false);
   const [isPauseShow, setPauseShow] = useState(false);
@@ -29,12 +30,12 @@ function Timer() {
 
   const handleStart = () => {
     setIsActive(true);
-    setShow(false)
-    setPauseShow(true)
+    setShow(false);
+    setPauseShow(true);
   };
   const handlePause = () => {
-    setShow(true)
-    setPauseShow(false)
+    setShow(true);
+    setPauseShow(false);
     setIsActive(false);
   };
   // const handleEdit = () => {
@@ -46,16 +47,26 @@ function Timer() {
   // };
 
   const handleRamenClick = (value) => {
+    switch (value) {
+      case 210:
+        setMen("Cup Nudle");
+        break;
+      case 240:
+        setMen("Ramen");
+        break;
+      case 600:
+        setMen("Spagetti");
+        break;
+    }
     setTime(value);
     setShow(true);
   };
 
   const handleTime = (value) => {
-    // let time = 
-    if(time>0) setTime(time + value);
-    else alert("Choose Ramen first!")
-    
-  }
+    // let time =
+    if (time > 0) setTime(time + value);
+    else alert("Choose Ramen first!");
+  };
 
   return (
     <div className="timer">
@@ -67,7 +78,7 @@ function Timer() {
             backgroundSize: "cover",
             width: "80px",
             height: "80px",
-            marginRight: "4px",
+            marginRight: "8px",
           }}
           onClick={() => handleRamenClick(210)}
         ></button>
@@ -78,27 +89,34 @@ function Timer() {
             backgroundSize: "cover",
             width: "80px",
             height: "80px",
-            marginRight: "4px",
+            marginRight: "8px",
           }}
           onClick={() => handleRamenClick(240)}
         ></button>
         <button
           style={{
             backgroundImage:
-              "url(https://www.sempio.com/static/images/product/noodles/visual_m.jpg)",
+              "url(https://therefillmill.ie/wp-content/uploads/2021/04/a95531_9025caf6d2a9450a9c5af4bed672f46cmv2.jpg)",
             backgroundSize: "cover",
+            alignSelf: "center",
             width: "80px",
             height: "80px",
-            marginRight: "4px",
+            marginRight: "0px",
           }}
-          onClick={() => handleRamenClick(300)}
+          onClick={() => handleRamenClick(600)}
         ></button>
         {/* <button onClick={() => handleRamenClick(240)}>🍌 신라면</button> */}
       </div>
 
-      <div style={{marginTop:"5px"}}>
-      <button onClick={() => handleTime(30)}>🍌 SOFT</button> 
-      <button onClick={() => handleTime(-20)}>🍌 HARD</button> 
+      <div>
+        <h3>{men}</h3>
+      </div>
+
+      <div style={{ marginTop: "80px" }}>
+        <button onClick={() => handleTime(-20)} style={{ marginRight: "8px" }}>
+          ➖ HARD
+        </button>
+        <button onClick={() => handleTime(30)}>➕ SOFT</button>
       </div>
 
       <div className="timer-display">{formatTime(time)}</div>
