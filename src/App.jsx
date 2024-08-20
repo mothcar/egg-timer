@@ -1,11 +1,11 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import Header from './Header';
-import Sidebar from './Sidebar';
+// import Sidebar from './Sidebar';
 import Timer from './Timer';
 import './App.css';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('Timer');
+  // const [activeTab, setActiveTab] = useState('Timer');
 
   return (
     <div className="App">
@@ -14,9 +14,10 @@ function App() {
       </div>
       
       <div className="content">
-        <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+        {/* <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} /> */}
         <main>
-          {activeTab === 'Timer' && <Timer />}
+        <Timer />
+          {/* {activeTab === 'Timer' && <Timer />} */}
           {/* 다른 탭에 대한 컴포넌트들을 여기에 추가 */}
         </main>
       </div>
