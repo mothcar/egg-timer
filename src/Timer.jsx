@@ -66,7 +66,7 @@ function Timer() {
         setMen("Spagetti");
         break;
     }
-    // setTime(value);
+    setTime(value);
     setShow(true);
   };
 
