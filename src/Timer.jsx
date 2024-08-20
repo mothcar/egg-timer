@@ -49,7 +49,7 @@ function Timer() {
   const handleRamenClick = (value) => {
     switch (value) {
       case 210:
-        setMen("Cup Nudle");
+        setMen("Cup Noodle");
         break;
       case 240:
         setMen("Ramen");
