@@ -6,6 +6,8 @@ function Timer() {
   const [isActive, setIsActive] = useState(false);
   const [isShow, setShow] = useState(false);
   const [isPauseShow, setPauseShow] = useState(false);
+  const [isStop, setStop] = useState(false);
+  const [audio, setAudio] = useState("");
   // const [result, setResult] = useState(0);
 
   useEffect(() => {
@@ -14,11 +16,17 @@ function Timer() {
       interval = setInterval(() => {
         setTime((time) => time - 1);
       }, 1000);
-    } else if (time === 0) {
+    } else if (isActive && time === 0) {
       setIsActive(false);
+      setStop(true)
+      setPauseShow(false)
+      const audio = new Audio('/alarm.mp3');
+      setAudio(audio)
+      audio.loop = true;
+      audio.play()      
     }
     return () => clearInterval(interval);
-  }, [isActive, time]);
+  }, [isActive, time, men]);
 
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
@@ -58,10 +66,15 @@ function Timer() {
         setMen("Spagetti");
         break;
     }
-    setTime(value);
+    // setTime(value);
     setShow(true);
   };
 
+  const handleStop = () => {
+    setStop(false)
+    audio.loop = false;
+    audio.pause();
+  };
   const handleTime = (value) => {
     // let time =
     if (time > 0) setTime(time + value);
@@ -134,6 +147,13 @@ function Timer() {
         {isShow ? (
           <button className="start" onClick={handleStart}>
             Start
+          </button>
+        ) : (
+          ""
+        )}
+        {isStop ? (
+          <button className="start" onClick={handleStop}>
+            End
           </button>
         ) : (
           ""
