@@ -77,7 +77,7 @@ function Timer() {
   };
   const handleTime = (value) => {
     // let time =
-    if (time > 0) setTime(time + value);
+    if (value ==10 || time > 10) setTime(time + value);
     else alert("Choose Ramen first!");
   };
 
@@ -109,7 +109,7 @@ function Timer() {
         <button
           style={{
             backgroundImage:
-              "url(https://therefillmill.ie/wp-content/uploads/2021/04/a95531_9025caf6d2a9450a9c5af4bed672f46cmv2.jpg)",
+              "url(https://res.cloudinary.com/mothcar/image/upload/v1724128990/timer/spagetti1_1.webp)",
             backgroundSize: "cover",
             alignSelf: "center",
             width: "80px",
@@ -126,10 +126,10 @@ function Timer() {
       </div>
 
       <div style={{ marginTop: "80px" }}>
-        <button onClick={() => handleTime(-20)} style={{ marginRight: "8px" }}>
+        <button onClick={() => handleTime(-10)} style={{ marginRight: "8px" }}>
           ➖ HARD
         </button>
-        <button onClick={() => handleTime(30)}>➕ SOFT</button>
+        <button onClick={() => handleTime(10)}>➕ SOFT</button>
       </div>
 
       <div className="timer-display">{formatTime(time)}</div>

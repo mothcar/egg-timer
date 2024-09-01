@@ -2,6 +2,7 @@
 import Header from './Header';
 // import Sidebar from './Sidebar';
 import Timer from './Timer';
+import Footer from './Footer';
 import './App.css';
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
           {/* {activeTab === 'Timer' && <Timer />} */}
           {/* 다른 탭에 대한 컴포넌트들을 여기에 추가 */}
         </main>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );
